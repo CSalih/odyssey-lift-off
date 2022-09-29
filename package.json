@@ -1,0 +1,18 @@
+{
+  "name": "odyssey-lift-off-part1",
+  "version": "1.0.0",
+  "private": true,
+  "repository": "git@github.com:apollographql/odyssey-lift-off-part1.git",
+  "author": "Salih Candir <salih.candir@styleflasher.at>",
+  "license": "MIT",
+  "scripts": {
+    "start": "lerna run start"
+  },
+  "workspaces": [
+    "server",
+    "client"
+  ],
+  "devDependencies": {
+    "lerna": "^5.5.4"
+  }
+}
