@@ -1,5 +1,8 @@
 const resolvers = {
     Query: {
+        track: (_, { id }, { dataSources }) => {
+            return dataSources.trackAPI.getTrack(id);
+        },
         tracksForHome: (_, __, { dataSources }) => {
             return dataSources.trackAPI.getTracksForHome();
         },
@@ -10,9 +13,12 @@ const resolvers = {
         },
     },
     Track: {
-        author: async ({ authorId }, _, { dataSources }) => {
+        author: ({ authorId }, _, { dataSources }) => {
             return dataSources.trackAPI.getAuthor(authorId);
-        }
+        },
+        modules: ({ id }, _, { dataSources }) => {
+            return dataSources.trackAPI.getTrackModules(id);
+        },
     },
 };
 
